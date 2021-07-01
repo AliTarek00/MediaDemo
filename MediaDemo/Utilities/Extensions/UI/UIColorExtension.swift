@@ -32,13 +32,8 @@ extension UIColor
 
 extension UIColor
 {
-    static var appPrimary: UIColor
+    static var appBackground: UIColor
     {
         return #colorLiteral(red: 0.0862745098, green: 0.4784313725, blue: 0.5215686275, alpha: 1)
-    }
-    
-    static var whiteColor: UIColor
-    {
-        return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 }

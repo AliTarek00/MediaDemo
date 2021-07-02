@@ -145,7 +145,7 @@ extension ChannelItem
         guard let title = self.title else { return nil }
 
         let imageURL = self.coverAsset?.url ?? ""
-        let imageHeight = isSeries ? SeriesCell.imageHeight : CourseCell.imageHeight
+        let imageHeight = isSeries ? SeriesCellSize.imageHeight : CourseCellSize.imageHeight
 
         return ChannelViewModel(title: title, imageCoverURL: imageURL, constraintImageHeight: imageHeight)
     }

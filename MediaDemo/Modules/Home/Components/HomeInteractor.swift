@@ -5,7 +5,7 @@
 //  Created by Ali Tarek on 7/1/21.
 //
 
-import Foundation
+import UIKit
 
 protocol HomeInteractorProtocol: class
 {
@@ -14,10 +14,14 @@ protocol HomeInteractorProtocol: class
     func fetchNewEpisodes()
     func fetchChannels()
     func fetchCategories()
+    
+    func getSizeof(EpisodeAt index: IndexPath)-> CGSize
+    func getSizeof(ChannelAt index: IndexPath)-> CGSize
 }
 
 class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
 {
+        
     // MARK:- Properties
     
     var presenter: HomePresenterProtocol?
@@ -71,6 +75,50 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
         }
     }
     
+    func getSizeof(EpisodeAt index: IndexPath)-> CGSize
+    {
+        guard index.row >= 0 && index.row < newEpisodes.count else
+        {
+            return CGSize(width: EpisodeCellSize.width, height: EpisodeCellSize.height)
+        }
+        
+        if let episode = newEpisodes[index.row].toEpisodeViewModel()
+        {
+            let episodeTitleHeight = episode.title.height(constrainedWidth: CGFloat(EpisodeCellSize.width),
+                                                             font: UIFont.systemFont(ofSize: 15))
+            let channelTitleHeight = episode.channel.height(constrainedWidth: CGFloat(EpisodeCellSize.width),
+                                                               font: UIFont.systemFont(ofSize: 25))
+
+            let height = CGFloat(EpisodeCellSize.height) + episodeTitleHeight + channelTitleHeight
+            return CGSize(width: CGFloat(EpisodeCellSize.width), height: height)
+        }
+        
+        return CGSize(width: EpisodeCellSize.width, height: EpisodeCellSize.height)
+    }
+    
+    func getSizeof(ChannelAt index: IndexPath)-> CGSize
+    {
+        let channel = channels[index.section]
+        if channel.isSeriesType
+        {
+            if let series = channel.series?[index.row].toChannelViewModel()
+            {
+                return getSizeOfSeries(series)
+            }
+        }
+        else
+        {
+            if let course = channel.latestMedia?[index.row].toChannelViewModel()
+            {
+                return getSizeOfCourse(course)
+            }
+        }
+        
+        return CGSize(width: CourseCellSize.width, height: CourseCellSize.height)
+    }
+    
+    // MARK:- Private Methods
+    
     private func validateNewEpisodes(_ response: BaseAPIResponse<NewEpisodesResponse>)
     {
         guard let episodes = response.data?.episodes, !episodes.isEmpty else
@@ -102,5 +150,21 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
         }
         self.categories = categories
         presenter?.didReceiveCategories(categories)
+    }
+    
+    private func getSizeOfSeries(_ series: ChannelViewModel)-> CGSize
+    {
+        let seriesTitleHeight = series.title.height(constrainedWidth: CGFloat(SeriesCellSize.width), font: UIFont.systemFont(ofSize: 20))
+        
+        let height = CGFloat(SeriesCellSize.height) + seriesTitleHeight
+        return CGSize(width: CGFloat(SeriesCellSize.width), height: height)
+    }
+    
+    private func getSizeOfCourse(_ course: ChannelViewModel)-> CGSize
+    {
+        let courseTitleHeight = course.title.height(constrainedWidth: CGFloat(CourseCellSize.width), font: UIFont.systemFont(ofSize: 20))
+        
+        let height = CGFloat(CourseCellSize.height) + courseTitleHeight
+        return CGSize(width: CGFloat(CourseCellSize.width), height: height)
     }
 }

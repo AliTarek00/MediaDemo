@@ -11,5 +11,11 @@ class HomeBuilder
 {
     class func buildModule(arroundView view: HomeViewController)
     {
+        let presenter = HomePresenter()
+        let interactor = HomeInteractor()
+        
+        view.interactor = interactor
+        interactor.presenter = presenter
+        presenter.view = view
     }
 }

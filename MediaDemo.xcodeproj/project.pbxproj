@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		1AAAE1D46CE4FBF209825E08 /* Pods_MediaDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1677E82F66D3630109F8136 /* Pods_MediaDemoTests.framework */; };
 		B47754989EAF08EC340EC4E4 /* Pods_MediaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5AB2E5234851E4E0576AA4 /* Pods_MediaDemo.framework */; };
+		BB726ECA268E855200D42F96 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB726EC9268E855200D42F96 /* StringExtension.swift */; };
 		BB9BD621268DD35B00A529FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD620268DD35B00A529FA /* AppDelegate.swift */; };
-		BB9BD628268DD35B00A529FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9BD626268DD35B00A529FA /* Main.storyboard */; };
+		BB9BD628268DD35B00A529FA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9BD626268DD35B00A529FA /* Home.storyboard */; };
 		BB9BD62A268DD36100A529FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB9BD629268DD36100A529FA /* Assets.xcassets */; };
 		BB9BD62D268DD36100A529FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9BD62B268DD36100A529FA /* LaunchScreen.storyboard */; };
 		BB9BD638268DD36200A529FA /* MediaDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD637268DD36200A529FA /* MediaDemoTests.swift */; };
@@ -79,9 +80,10 @@
 		238BA71DC191875B3D9FDBF8 /* Pods-MediaDemo-MediaDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaDemo-MediaDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-MediaDemo-MediaDemoUITests/Pods-MediaDemo-MediaDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AEC6CAE943D5F1C2BA59DB2 /* Pods-MediaDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaDemoTests.release.xcconfig"; path = "Target Support Files/Pods-MediaDemoTests/Pods-MediaDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1677E82F66D3630109F8136 /* Pods_MediaDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB726EC9268E855200D42F96 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		BB9BD61D268DD35B00A529FA /* MediaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB9BD620268DD35B00A529FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB9BD627268DD35B00A529FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB9BD627268DD35B00A529FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		BB9BD629268DD36100A529FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB9BD62C268DD36100A529FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB9BD62E268DD36100A529FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +188,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB726ED1268E8EC100D42F96 /* AppMangers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppMangers;
+			sourceTree = "<group>";
+		};
 		BB9BD614268DD35B00A529FA = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +268,7 @@
 		BB9BD664268DD59000A529FA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BB726ED1268E8EC100D42F96 /* AppMangers */,
 				BB9E70BD268DF1AD00BCB70A /* GenericComponents */,
 				BB9BD66E268DD64800A529FA /* View */,
 				BB9BD67D268DD68300A529FA /* Extensions */,
@@ -280,8 +290,9 @@
 		BB9BD67D268DD68300A529FA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BB9BD67E268DD74400A529FA /* UI */,
+				BB726EC9268E855200D42F96 /* StringExtension.swift */,
 				BB9BD693268DDBF200A529FA /* XIBExtension.swift */,
+				BB9BD67E268DD74400A529FA /* UI */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,7 +384,7 @@
 		BBCB3756268E079800AB351F /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				BB9BD626268DD35B00A529FA /* Main.storyboard */,
+				BB9BD626268DD35B00A529FA /* Home.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -566,7 +577,7 @@
 				BBCB378F268E0A2600AB351F /* ChannelCollectionViewCell.xib in Resources */,
 				BB9BD62A268DD36100A529FA /* Assets.xcassets in Resources */,
 				BBCB3784268E09EF00AB351F /* EpisodeCollectionViewCell.xib in Resources */,
-				BB9BD628268DD35B00A529FA /* Main.storyboard in Resources */,
+				BB9BD628268DD35B00A529FA /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +737,7 @@
 				BBCB3773268E08FE00AB351F /* HomeBuilder.swift in Sources */,
 				BB9BD694268DDBF200A529FA /* XIBExtension.swift in Sources */,
 				BB9BD677268DD67100A529FA /* DesignableView.swift in Sources */,
+				BB726ECA268E855200D42F96 /* StringExtension.swift in Sources */,
 				BB9BD6A8268DE3C700A529FA /* Base.swift in Sources */,
 				BB9BD678268DD67100A529FA /* DesignableButton.swift in Sources */,
 				BBCB3744268DFD7C00AB351F /* Category.swift in Sources */,
@@ -764,12 +776,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BB9BD626268DD35B00A529FA /* Main.storyboard */ = {
+		BB9BD626268DD35B00A529FA /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BB9BD627268DD35B00A529FA /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		BB9BD62B268DD36100A529FA /* LaunchScreen.storyboard */ = {

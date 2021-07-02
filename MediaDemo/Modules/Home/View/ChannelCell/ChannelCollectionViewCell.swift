@@ -7,6 +7,20 @@
 
 import UIKit
 
+enum CourseCellSize
+{
+    static let height = 315
+    static let width = 200
+    static let imageHeight = 300
+}
+
+enum SeriesCellSize
+{
+    static let height = 215
+    static let width = 340
+    static let imageHeight = 200
+}
+
 class ChannelCollectionViewCell: UICollectionViewCell, Configurable
 {
     // MARK: Outlets

@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum EpisodeCellSize
+{
+    static let height = 325
+    static let width = 200
+}
+
 class EpisodeCollectionViewCell: UICollectionViewCell, Configurable
 {
     // MARK: Outlets

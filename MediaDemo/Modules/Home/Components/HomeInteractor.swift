@@ -84,10 +84,10 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
         
         if let episode = newEpisodes[index.row].toEpisodeViewModel()
         {
-            let episodeTitleHeight = episode.title.height(constrainedWidth: CGFloat(EpisodeCellSize.width),
+            let episodeTitleHeight = episode.title.height(withConstrainedWidth: CGFloat(EpisodeCellSize.width),
                                                              font: UIFont.systemFont(ofSize: 15))
-            let channelTitleHeight = episode.channel.height(constrainedWidth: CGFloat(EpisodeCellSize.width),
-                                                               font: UIFont.systemFont(ofSize: 25))
+            let channelTitleHeight = episode.channel.height(withConstrainedWidth: CGFloat(EpisodeCellSize.width),
+                                                               font: UIFont.systemFont(ofSize: 19))
 
             let height = CGFloat(EpisodeCellSize.height) + episodeTitleHeight + channelTitleHeight
             return CGSize(width: CGFloat(EpisodeCellSize.width), height: height)
@@ -154,7 +154,7 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
     
     private func getSizeOfSeries(_ series: ChannelViewModel)-> CGSize
     {
-        let seriesTitleHeight = series.title.height(constrainedWidth: CGFloat(SeriesCellSize.width), font: UIFont.systemFont(ofSize: 20))
+        let seriesTitleHeight = series.title.height(withConstrainedWidth: CGFloat(SeriesCellSize.width), font: UIFont.systemFont(ofSize: 20))
         
         let height = CGFloat(SeriesCellSize.height) + seriesTitleHeight
         return CGSize(width: CGFloat(SeriesCellSize.width), height: height)
@@ -162,7 +162,7 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
     
     private func getSizeOfCourse(_ course: ChannelViewModel)-> CGSize
     {
-        let courseTitleHeight = course.title.height(constrainedWidth: CGFloat(CourseCellSize.width), font: UIFont.systemFont(ofSize: 20))
+        let courseTitleHeight = course.title.height(withConstrainedWidth: CGFloat(CourseCellSize.width), font: UIFont.systemFont(ofSize: 20))
         
         let height = CGFloat(CourseCellSize.height) + courseTitleHeight
         return CGSize(width: CGFloat(CourseCellSize.width), height: height)

@@ -8,8 +8,8 @@ target 'MediaDemo' do
   pod 'Moya'
   pod 'Kingfisher'
   pod 'Toast-Swift'
-  pod 'NVActivityIndicatorView'
-
+  pod 'JEKScrollableSectionCollectionViewLayout'
+  pod 'NVActivityIndicatorView', :git => 'https://github.com/ninjaprox/NVActivityIndicatorView.git', :tag => '4.8.0'
 
   target 'MediaDemoTests' do
     inherit! :search_paths

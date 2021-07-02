@@ -9,7 +9,7 @@ import UIKit
 
 enum EpisodeCellSize
 {
-    static let height = 325
+    static let height = 400
     static let width = 200
 }
 

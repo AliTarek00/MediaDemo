@@ -40,3 +40,17 @@ extension UIViewController
     }
 }
 
+extension UIViewController: NVActivityIndicatorViewable
+{
+    func showLoader()
+    {
+        let size = CGSize(width: 50, height: 50)
+        startAnimating(size, message: "Loading ...", type: .ballClipRotate)
+    }
+    
+    func hideLoader()
+    {
+        stopAnimating()
+    }
+}
+

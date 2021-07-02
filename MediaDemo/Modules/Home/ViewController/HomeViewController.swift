@@ -5,7 +5,8 @@
 //  Created by Ali Tarek on 7/1/21.
 //
 
-import UIKit
+import NVActivityIndicatorView
+import JEKScrollableSectionCollectionViewLayout
 
 protocol HomeViewProtocol: class
 {
@@ -16,7 +17,7 @@ protocol HomeViewProtocol: class
     // Update UI with value returned.
     func displayNewEpisodes(from dataSource: CollectionViewDataSource<EpisodeViewModel, EpisodeCollectionViewCell>)
     
-    func displayEpisodes(from dataSource: MultiSectionCollectionViewDataSource<ChannelViewModel, ChannelSectionHeaderViewModel, ChannelCollectionViewCell, ChannelSectionHeader>)
+    func displayChannels(from dataSource: MultiSectionCollectionViewDataSource<ChannelViewModel, ChannelSectionHeaderViewModel, ChannelCollectionViewCell, ChannelSectionHeader>)
     
     func displayCategories(from dataSource: CollectionViewDataSource<CategoryViewModel, CategoryCollectionViewCell>)
     
@@ -67,9 +68,7 @@ class HomeViewController: UIViewController
         setupChannelsCollectionView()
         setupCategoriesCollectionView()
         
-        interactor?.fetchNewEpisodes()
-        interactor?.fetchChannels()
-        interactor?.fetchCategories()
+        fetchHomeData()
     }
     
     private func registerCells()
@@ -86,12 +85,14 @@ class HomeViewController: UIViewController
     
     private func setupNewEpisodesCollectionView()
     {
+        setNewEpisodesCollectionViewHeight()
         newEpisodesCollectionView.delegate = self
         newEpisodesCollectionHeight.constant = 0.0
     }
     
     private func setupChannelsCollectionView()
     {
+        setupChannelsCollectionLayout()
         channelsCollectionView.delegate = self
         channelsCollectionHeight.constant = 0.0
     }
@@ -101,10 +102,23 @@ class HomeViewController: UIViewController
         categoriesCollectionView.delegate = self
         categoriesCollectionHeight.constant = 0.0
     }
+    
+    private func setupNewEpisodesCollectionLayout()
+    {
+        let layout = JEKScrollableSectionCollectionViewLayout()
+        newEpisodesCollectionView.collectionViewLayout = layout
+    }
+    
+    private func setupChannelsCollectionLayout()
+    {
+        let layout = JEKScrollableSectionCollectionViewLayout()
+        layout.headerReferenceSize = CGSize(width: 0, height: 85)
+        channelsCollectionView.collectionViewLayout = layout
+    }
         
     private func setNewEpisodesCollectionViewHeight()
     {
-        let contentHeight = newEpisodesCollectionView.contentSize.height
+        let contentHeight = newEpisodesCollectionView.collectionViewLayout.collectionViewContentSize.height
         newEpisodesCollectionHeight.constant = contentHeight
     }
 
@@ -116,8 +130,15 @@ class HomeViewController: UIViewController
     
     private func setCategoriesCollectionViewHeight()
     {
-        let contentHeight = categoriesCollectionView.contentSize.height
+        let contentHeight = categoriesCollectionView.collectionViewLayout.collectionViewContentSize.height
         categoriesCollectionHeight.constant = contentHeight
+    }
+    
+    private func fetchHomeData()
+    {
+        interactor?.fetchNewEpisodes()
+        interactor?.fetchChannels()
+        interactor?.fetchCategories()
     }
     
     // MARK:- Public Methods
@@ -125,21 +146,21 @@ class HomeViewController: UIViewController
     func refreshNewEpisodesCollectionView()
     {
         newEpisodesCollectionView.reloadData()
-        view.layoutIfNeeded()
+        newEpisodesCollectionView.layoutIfNeeded()
         setNewEpisodesCollectionViewHeight()
     }
         
     func refreshChannelsCollectionView()
     {
         channelsCollectionView.reloadData()
-        view.layoutIfNeeded()
+        channelsCollectionView.layoutIfNeeded()
         setChannelsCollectionViewHeight()
     }
     
     func refreshCategoriesCollectionView()
     {
         categoriesCollectionView.reloadData()
-        view.layoutIfNeeded()
+        categoriesCollectionView.layoutIfNeeded()
         setCategoriesCollectionViewHeight()
     }
 }

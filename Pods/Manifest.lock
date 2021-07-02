@@ -1,36 +1,49 @@
 PODS:
   - Alamofire (5.4.2)
+  - JEKScrollableSectionCollectionViewLayout (1.3.0)
   - Kingfisher (6.3.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - NVActivityIndicatorView (5.1.1):
-    - NVActivityIndicatorView/Base (= 5.1.1)
-  - NVActivityIndicatorView/Base (5.1.1)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - JEKScrollableSectionCollectionViewLayout
   - Kingfisher
   - Moya
-  - NVActivityIndicatorView
+  - NVActivityIndicatorView (from `https://github.com/ninjaprox/NVActivityIndicatorView.git`, tag `4.8.0`)
   - Toast-Swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - JEKScrollableSectionCollectionViewLayout
     - Kingfisher
     - Moya
-    - NVActivityIndicatorView
     - Toast-Swift
+
+EXTERNAL SOURCES:
+  NVActivityIndicatorView:
+    :git: https://github.com/ninjaprox/NVActivityIndicatorView.git
+    :tag: 4.8.0
+
+CHECKOUT OPTIONS:
+  NVActivityIndicatorView:
+    :git: https://github.com/ninjaprox/NVActivityIndicatorView.git
+    :tag: 4.8.0
 
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  JEKScrollableSectionCollectionViewLayout: f241d1636331caa7bdb96a714f1f3372bd5f9002
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  NVActivityIndicatorView: 24b713d5140767dc43097cd9d5ff719ff0660bdc
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 0b1fed42f072d446cfed5dc82cfed3a7841a0755
+PODFILE CHECKSUM: 8c7369a879fd548f7765095fba3685617b0769eb
 
 COCOAPODS: 1.10.1

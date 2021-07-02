@@ -1,0 +1,6 @@
+framework module JEKScrollableSectionCollectionViewLayout {
+  umbrella header "JEKScrollableSectionCollectionViewLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

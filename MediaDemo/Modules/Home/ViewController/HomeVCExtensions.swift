@@ -22,7 +22,7 @@ extension HomeViewController: HomeViewProtocol
         refreshNewEpisodesCollectionView()
     }
     
-    func displayEpisodes(from dataSource: MultiSectionCollectionViewDataSource<ChannelViewModel, ChannelSectionHeaderViewModel, ChannelCollectionViewCell, ChannelSectionHeader>)
+    func displayChannels(from dataSource: MultiSectionCollectionViewDataSource<ChannelViewModel, ChannelSectionHeaderViewModel, ChannelCollectionViewCell, ChannelSectionHeader>)
     {
         channelsCollectionView.dataSource = dataSource
         refreshChannelsCollectionView()
@@ -49,36 +49,26 @@ extension HomeViewController: UICollectionViewDelegate
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout
 {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
-    {
-        if collectionView == channelsCollectionView
-        {
-            return CGSize(width: collectionView.frame.size.width, height: 85.0)
-        }
-        else
-        {
-            return CGSize(width: collectionView.frame.size.width, height: 0)
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         if collectionView == newEpisodesCollectionView
         {
-            return interactor?.getSizeof(EpisodeAt: indexPath) ?? CGSize(width: 0.0, height: 0.0)
+            let size = CGSize(width: EpisodeCellSize.width, height: EpisodeCellSize.height)
+            return size
         }
         
         if collectionView == channelsCollectionView
         {
-            return interactor?.getSizeof(ChannelAt: indexPath) ?? CGSize(width: 0.0, height: 0.0)
+            let size = interactor?.getSizeof(ChannelAt: indexPath) ?? CGSize(width: 0.0, height: 0.0)
+            return size
         }
         
         if collectionView == categoriesCollectionView
         {
-            let width = (categoriesCollectionView.frame.width - (collectionViewLayoutProperties.hSpaceBetweenCells + collectionViewLayoutProperties.sectionLeftSpace + collectionViewLayoutProperties.sectionRightSpace))
+            let width = (categoriesCollectionView.frame.width - (collectionViewLayoutProperties.hSpaceBetweenCells + 10))
                 / 2.0
 
-            return CGSize(width: width, height: 70.0)
+            return CGSize(width: width, height: 65.0)
         }
         
         return CGSize(width: 0.0, height: 0.0)
@@ -91,12 +81,22 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
     {
+        if collectionView == categoriesCollectionView
+        {
+            return 10.0
+        }
         return collectionViewLayoutProperties.hSpaceBetweenCells
+
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
+        if collectionView == categoriesCollectionView
+        {
+            return UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
+        }
         return UIEdgeInsets(top: collectionViewLayoutProperties.sectionTopSpace, left: collectionViewLayoutProperties.sectionLeftSpace,
                             bottom: collectionViewLayoutProperties.sectionBottomSpace, right: collectionViewLayoutProperties.sectionRightSpace)
     }
+    
 }

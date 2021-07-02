@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="385"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Course" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-J4-P7z" customClass="DesignableImageView" customModule="MediaDemo" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-J4-P7z" customClass="DesignableImageView" customModule="MediaDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="eTc-Do-HEJ"/>
@@ -30,16 +30,16 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gHZ-in-DcN">
-                        <rect key="frame" x="0.0" y="305" width="200" height="75"/>
+                        <rect key="frame" x="0.0" y="305" width="200" height="46"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-vJ-DX0">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww9-UJ-BOw">
-                                <rect key="frame" x="0.0" y="35" width="200" height="40"/>
+                                <rect key="frame" x="0.0" y="28" width="200" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="0.58465200660000005" green="0.59570187330000002" blue="0.61568975449999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                 <constraint firstItem="gHZ-in-DcN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9E3-Qp-VVm"/>
                 <constraint firstItem="Hfb-J4-P7z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LYv-rh-t8W"/>
                 <constraint firstAttribute="trailing" secondItem="Hfb-J4-P7z" secondAttribute="trailing" id="SVS-8n-olj"/>
-                <constraint firstAttribute="bottom" secondItem="gHZ-in-DcN" secondAttribute="bottom" constant="5" id="hwH-Aa-YZQ"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gHZ-in-DcN" secondAttribute="bottom" constant="5" id="hwH-Aa-YZQ"/>
                 <constraint firstAttribute="trailing" secondItem="gHZ-in-DcN" secondAttribute="trailing" id="kun-q0-ls4"/>
                 <constraint firstItem="Hfb-J4-P7z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zog-T7-EHO"/>
             </constraints>
@@ -67,12 +67,4 @@
             <point key="canvasLocation" x="24.637681159420293" y="181.80803571428569"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="Hfb-J4-P7z">
-            <size key="intrinsicContentSize" width="129" height="129"/>
-        </designable>
-    </designables>
-    <resources>
-        <image name="Course" width="129" height="129"/>
-    </resources>
 </document>

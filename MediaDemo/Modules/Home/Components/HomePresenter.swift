@@ -78,7 +78,7 @@ class HomePresenter: HomePresenterProtocol
         
         channelsDataSource = MultiSectionCollectionViewDataSource(models: channelsViewModels,
                                                                   sections: sections)
-        view?.displayEpisodes(from: channelsDataSource)
+        view?.displayChannels(from: channelsDataSource)
     }
     
     func didReceiveCategories(_ categories: [Category])

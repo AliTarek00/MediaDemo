@@ -9,18 +9,11 @@
 import Kingfisher
 
 extension UIImageView
-{
-    convenience init(assetName: String, scale: UIView.ContentMode = .scaleAspectFit)
-    {
-        self.init(image: UIImage(named: assetName))
-        contentMode = scale
-    }
-    
+{    
     func setImage(from imageURL: String?)
     {
         guard let imageURL = imageURL,
-              let encodedURL = imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let url = URL(string: encodedURL) else { return }
+              let url = URL(string: imageURL) else { return }
         kf.setImage(with: url)
     }
 }

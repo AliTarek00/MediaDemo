@@ -44,7 +44,6 @@
 		BBCB3769268E08DD00AB351F /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB3768268E08DD00AB351F /* HomeInteractor.swift */; };
 		BBCB376E268E08EF00AB351F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB376D268E08EF00AB351F /* HomePresenter.swift */; };
 		BBCB3773268E08FE00AB351F /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB3772268E08FE00AB351F /* HomeBuilder.swift */; };
-		BBCB3778268E091100AB351F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB3777268E091100AB351F /* HomeRouter.swift */; };
 		BBCB3784268E09EF00AB351F /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCB3782268E09EF00AB351F /* EpisodeCollectionViewCell.xib */; };
 		BBCB3785268E09EF00AB351F /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB3783268E09EF00AB351F /* EpisodeCollectionViewCell.swift */; };
 		BBCB378E268E0A2600AB351F /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB378C268E0A2600AB351F /* ChannelCollectionViewCell.swift */; };
@@ -130,7 +129,6 @@
 		BBCB3768268E08DD00AB351F /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		BBCB376D268E08EF00AB351F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		BBCB3772268E08FE00AB351F /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
-		BBCB3777268E091100AB351F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		BBCB3782268E09EF00AB351F /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
 		BBCB3783268E09EF00AB351F /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BBCB378C268E0A2600AB351F /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -413,7 +411,6 @@
 				BBCB3768268E08DD00AB351F /* HomeInteractor.swift */,
 				BBCB376D268E08EF00AB351F /* HomePresenter.swift */,
 				BBCB3772268E08FE00AB351F /* HomeBuilder.swift */,
-				BBCB3777268E091100AB351F /* HomeRouter.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -745,7 +742,6 @@
 				BBCB3798268E0ABA00AB351F /* CategoryCollectionViewCell.swift in Sources */,
 				BB9E70C9268DF86C00BCB70A /* UIApplicationExtension.swift in Sources */,
 				BBCB3742268DFD7C00AB351F /* Channel.swift in Sources */,
-				BBCB3778268E091100AB351F /* HomeRouter.swift in Sources */,
 				BB9E70C1268DF1D400BCB70A /* CollectionViewDataSource.swift in Sources */,
 				BB9BD621268DD35B00A529FA /* AppDelegate.swift in Sources */,
 				BB9BD683268DD75B00A529FA /* UIViewExtension.swift in Sources */,

@@ -15,7 +15,6 @@ protocol HomeInteractorProtocol: class
     func fetchChannels()
     func fetchCategories()
     
-    func getSizeof(EpisodeAt index: IndexPath)-> CGSize
     func getSizeof(ChannelAt index: IndexPath)-> CGSize
 }
 
@@ -38,9 +37,7 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
             switch result
             {
             case let .success(response):
-                let data = Array(response.data?.episodes?.prefix(6) ?? [])
-                self?.newEpisodes = data
-                self?.presenter?.didReceiveNewEpisodes(data)
+                self?.validateNewEpisodes(response)
             case let .failure(error):
                 self?.presenter?.error(error)
             }
@@ -53,9 +50,7 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
             switch result
             {
             case let .success(response):
-                let data = response.data?.channels ?? []
-                self?.channels = data
-                self?.presenter?.didReceiveChannels(data)
+                self?.validateChannels(response)
             case let .failure(error):
                 self?.presenter?.error(error)
             }
@@ -74,28 +69,7 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
             }
         }
     }
-    
-    func getSizeof(EpisodeAt index: IndexPath)-> CGSize
-    {
-        guard index.row >= 0 && index.row < newEpisodes.count else
-        {
-            return CGSize(width: EpisodeCellSize.width, height: EpisodeCellSize.height)
-        }
         
-        if let episode = newEpisodes[index.row].toEpisodeViewModel()
-        {
-            let episodeTitleHeight = episode.title.height(withConstrainedWidth: CGFloat(EpisodeCellSize.width),
-                                                             font: UIFont.systemFont(ofSize: 15))
-            let channelTitleHeight = episode.channel.height(withConstrainedWidth: CGFloat(EpisodeCellSize.width),
-                                                               font: UIFont.systemFont(ofSize: 19))
-
-            let height = CGFloat(EpisodeCellSize.height) + episodeTitleHeight + channelTitleHeight
-            return CGSize(width: CGFloat(EpisodeCellSize.width), height: height)
-        }
-        
-        return CGSize(width: EpisodeCellSize.width, height: EpisodeCellSize.height)
-    }
-    
     func getSizeof(ChannelAt index: IndexPath)-> CGSize
     {
         let channel = channels[index.section]
@@ -126,7 +100,7 @@ class HomeInteractor: HomeInteractorProtocol, MediaNetworkManagerInjected
             presenter?.error(HomeAPIError.emptyNewEpisodes)
             return
         }
-        self.newEpisodes = episodes
+        self.newEpisodes = Array(episodes[...5])
         presenter?.didReceiveNewEpisodes(episodes)
     }
     

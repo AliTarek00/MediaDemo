@@ -54,6 +54,8 @@
 		BBCB37A3268E0E1D00AB351F /* ChannelSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB37A1268E0E1D00AB351F /* ChannelSectionHeader.swift */; };
 		BBCB37A4268E0E1D00AB351F /* ChannelSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCB37A2268E0E1D00AB351F /* ChannelSectionHeader.xib */; };
 		BBCB37A9268E1D2A00AB351F /* HomeEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB37A8268E1D2A00AB351F /* HomeEnums.swift */; };
+		BBE57A2A26907E50008BF182 /* NewEpisodesSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = BBE57A2926907E4F008BF182 /* NewEpisodesSampleData.json */; };
+		BBE57A2F26907E5F008BF182 /* CategoriesSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = BBE57A2E26907E5F008BF182 /* CategoriesSampleData.json */; };
 		D5971C454B2755BD7A6ADD26 /* Pods_MediaDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84FD62795A0D339340FCD96 /* Pods_MediaDemoTests.framework */; };
 		DA87A5BC19E7C7316B719105 /* Pods_MediaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7749552F7F51872A95056E /* Pods_MediaDemo.framework */; };
 		F57BA18D9B232215A69694F4 /* Pods_MediaDemo_MediaDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C7BE38534030477B398BF0 /* Pods_MediaDemo_MediaDemoUITests.framework */; };
@@ -138,6 +140,8 @@
 		BBCB37A1268E0E1D00AB351F /* ChannelSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelSectionHeader.swift; sourceTree = "<group>"; };
 		BBCB37A2268E0E1D00AB351F /* ChannelSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelSectionHeader.xib; sourceTree = "<group>"; };
 		BBCB37A8268E1D2A00AB351F /* HomeEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEnums.swift; sourceTree = "<group>"; };
+		BBE57A2926907E4F008BF182 /* NewEpisodesSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewEpisodesSampleData.json; sourceTree = "<group>"; };
+		BBE57A2E26907E5F008BF182 /* CategoriesSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoriesSampleData.json; sourceTree = "<group>"; };
 		C84FD62795A0D339340FCD96 /* Pods_MediaDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,7 +197,9 @@
 		BB793FCA268FE168002D196C /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				BBE57A2926907E4F008BF182 /* NewEpisodesSampleData.json */,
 				BB793FCB268FE175002D196C /* ChannelsSampleData.json */,
+				BBE57A2E26907E5F008BF182 /* CategoriesSampleData.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -577,10 +583,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE57A2F26907E5F008BF182 /* CategoriesSampleData.json in Resources */,
 				BBCB3799268E0ABA00AB351F /* CategoryCollectionViewCell.xib in Resources */,
 				BBCB37A4268E0E1D00AB351F /* ChannelSectionHeader.xib in Resources */,
 				BB9BD62D268DD36100A529FA /* LaunchScreen.storyboard in Resources */,
 				BBCB378F268E0A2600AB351F /* ChannelCollectionViewCell.xib in Resources */,
+				BBE57A2A26907E50008BF182 /* NewEpisodesSampleData.json in Resources */,
 				BB9BD62A268DD36100A529FA /* Assets.xcassets in Resources */,
 				BBCB3784268E09EF00AB351F /* EpisodeCollectionViewCell.xib in Resources */,
 				BB9BD628268DD35B00A529FA /* Home.storyboard in Resources */,

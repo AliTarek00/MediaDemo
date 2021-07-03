@@ -43,5 +43,20 @@ class MediaDemoTests: XCTestCase
         XCTAssert(expectedNumberOChannels == exactNumberOfChannels, message)
     }
     
+    func testFetchNewEpisodes() throws
+    {
+        let expectedNumberOEpisodes = 3
+        var exactNumberOfEpisodes: Int?
+        
+        networkManager.getNewEpisodes { result in
+            if case .success(let response) = result
+            {
+                exactNumberOfEpisodes = response.data?.episodes?.count ?? 0
+            }
+        }
+        
+        let message = "expected: \(expectedNumberOEpisodes), exact: \(String(describing: exactNumberOfEpisodes))"
+        XCTAssert(expectedNumberOEpisodes == exactNumberOfEpisodes, message)
+    }
     
 }

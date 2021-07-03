@@ -46,7 +46,9 @@ extension MediaAPI: TargetType
     {
         switch self
         {
-        case .getNewEpisodes, .getCategories, .getChannels:
+        case .getChannels:
+            return TestDataManager.getJSONData(fromFile: "ChannelsSampleData")
+        case .getNewEpisodes, .getCategories:
             return Data()
         }
     }

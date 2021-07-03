@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BB726ECA268E855200D42F96 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB726EC9268E855200D42F96 /* StringExtension.swift */; };
+		BB793FCC268FE175002D196C /* ChannelsSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = BB793FCB268FE175002D196C /* ChannelsSampleData.json */; };
+		BB793FD1268FE271002D196C /* TestDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB793FD0268FE271002D196C /* TestDataManger.swift */; };
 		BB9BD621268DD35B00A529FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD620268DD35B00A529FA /* AppDelegate.swift */; };
 		BB9BD628268DD35B00A529FA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9BD626268DD35B00A529FA /* Home.storyboard */; };
 		BB9BD62A268DD36100A529FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB9BD629268DD36100A529FA /* Assets.xcassets */; };
 		BB9BD62D268DD36100A529FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9BD62B268DD36100A529FA /* LaunchScreen.storyboard */; };
-		BB9BD638268DD36200A529FA /* MediaDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD637268DD36200A529FA /* MediaDemoTests.swift */; };
+		BB9BD638268DD36200A529FA /* MediaNetworkMangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD637268DD36200A529FA /* MediaNetworkMangerTests.swift */; };
 		BB9BD643268DD36200A529FA /* MediaDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD642268DD36200A529FA /* MediaDemoUITests.swift */; };
 		BB9BD676268DD67100A529FA /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD672268DD67100A529FA /* ActivityIndicator.swift */; };
 		BB9BD677268DD67100A529FA /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BD673268DD67100A529FA /* DesignableView.swift */; };
@@ -84,6 +86,8 @@
 		780542E8C05A098F761356E7 /* Pods-MediaDemo-MediaDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaDemo-MediaDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-MediaDemo-MediaDemoUITests/Pods-MediaDemo-MediaDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7AA553F0261DB79CB5813E37 /* Pods-MediaDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaDemoTests.release.xcconfig"; path = "Target Support Files/Pods-MediaDemoTests/Pods-MediaDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB726EC9268E855200D42F96 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BB793FCB268FE175002D196C /* ChannelsSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChannelsSampleData.json; sourceTree = "<group>"; };
+		BB793FD0268FE271002D196C /* TestDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataManger.swift; sourceTree = "<group>"; };
 		BB9BD61D268DD35B00A529FA /* MediaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB9BD620268DD35B00A529FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB9BD627268DD35B00A529FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 		BB9BD62C268DD36100A529FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB9BD62E268DD36100A529FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9BD633268DD36200A529FA /* MediaDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB9BD637268DD36200A529FA /* MediaDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDemoTests.swift; sourceTree = "<group>"; };
+		BB9BD637268DD36200A529FA /* MediaNetworkMangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaNetworkMangerTests.swift; sourceTree = "<group>"; };
 		BB9BD639268DD36200A529FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9BD63E268DD36200A529FA /* MediaDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB9BD642268DD36200A529FA /* MediaDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDemoUITests.swift; sourceTree = "<group>"; };
@@ -181,8 +185,17 @@
 		BB726ED1268E8EC100D42F96 /* AppMangers */ = {
 			isa = PBXGroup;
 			children = (
+				BB793FD0268FE271002D196C /* TestDataManger.swift */,
 			);
 			path = AppMangers;
+			sourceTree = "<group>";
+		};
+		BB793FCA268FE168002D196C /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				BB793FCB268FE175002D196C /* ChannelsSampleData.json */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		BB9BD614268DD35B00A529FA = {
@@ -222,7 +235,7 @@
 		BB9BD636268DD36200A529FA /* MediaDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB9BD637268DD36200A529FA /* MediaDemoTests.swift */,
+				BB9BD637268DD36200A529FA /* MediaNetworkMangerTests.swift */,
 				BB9BD639268DD36200A529FA /* Info.plist */,
 			);
 			path = MediaDemoTests;
@@ -316,7 +329,6 @@
 				BBCB3767268E08BF00AB351F /* Components */,
 				BBCB3757268E07F800AB351F /* ViewController */,
 				BBCB373E268DFD3300AB351F /* Model */,
-				BBCB377C268E091A00AB351F /* Worker */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -324,6 +336,7 @@
 		BB9BD68A268DD79D00A529FA /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				BB793FCA268FE168002D196C /* Stubs */,
 				BB9BD69F268DE2B500A529FA /* Core */,
 				BB9BD69E268DE23500A529FA /* Media */,
 			);
@@ -397,13 +410,6 @@
 				BBCB3777268E091100AB351F /* HomeRouter.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		BBCB377C268E091A00AB351F /* Worker */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Worker;
 			sourceTree = "<group>";
 		};
 		BBCB377E268E095200AB351F /* View */ = {
@@ -578,6 +584,7 @@
 				BB9BD62A268DD36100A529FA /* Assets.xcassets in Resources */,
 				BBCB3784268E09EF00AB351F /* EpisodeCollectionViewCell.xib in Resources */,
 				BB9BD628268DD35B00A529FA /* Home.storyboard in Resources */,
+				BB793FCC268FE175002D196C /* ChannelsSampleData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +723,7 @@
 				BBCB3785268E09EF00AB351F /* EpisodeCollectionViewCell.swift in Sources */,
 				BBCB376E268E08EF00AB351F /* HomePresenter.swift in Sources */,
 				BB9BD6C1268DE4A700A529FA /* MediaResponses.swift in Sources */,
+				BB793FD1268FE271002D196C /* TestDataManger.swift in Sources */,
 				BBCB37A3268E0E1D00AB351F /* ChannelSectionHeader.swift in Sources */,
 				BBCB378E268E0A2600AB351F /* ChannelCollectionViewCell.swift in Sources */,
 				BB9BD676268DD67100A529FA /* ActivityIndicator.swift in Sources */,
@@ -748,7 +756,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB9BD638268DD36200A529FA /* MediaDemoTests.swift in Sources */,
+				BB9BD638268DD36200A529FA /* MediaNetworkMangerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

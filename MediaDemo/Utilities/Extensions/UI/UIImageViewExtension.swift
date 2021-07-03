@@ -10,10 +10,11 @@ import Kingfisher
 
 extension UIImageView
 {    
-    func setImage(from imageURL: String?)
+    func setImage(from imageURL: String?, placeholder: UIImage? = nil)
     {
         guard let imageURL = imageURL,
-              let url = URL(string: imageURL) else { return }
-        kf.setImage(with: url)
+              let encodedURL = imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+              let url = URL(string: encodedURL) else { return }
+        kf.setImage(with: url, placeholder: placeholder)
     }
 }

@@ -14,14 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        stetupGlopalApperance()
+        buildAppRoute(application)
+        return true
+    }
+    
+    //MARK:- Helper Methods
+    
+    private func buildAppRoute(_ application: UIApplication)
+    {
         if let rootNavigationController = application.windows.first?.rootViewController as? UINavigationController,
             let homeView = rootNavigationController.viewControllers.first as? HomeViewController
         {
             HomeBuilder.buildModule(arroundView: homeView)
         }
-        
-        return true
     }
-
+    
+    private func stetupGlopalApperance()
+    {
+        UINavigationBar.appearance().barStyle = .blackOpaque
+    }
 }
 

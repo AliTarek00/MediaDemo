@@ -32,11 +32,11 @@ class ChannelSectionHeader: UICollectionReusableView, Configurable
         if model.imageIconURL != ""
         {
             
-            imageViewIcon.setImage(from: model.imageIconURL)
+            imageViewIcon.setImage(from: model.imageIconURL, placeholder: #imageLiteral(resourceName: "booster"))
         }
         else
         {
-            imageViewIcon.image = #imageLiteral(resourceName: "defaultImage")
+            imageViewIcon.image = #imageLiteral(resourceName: "booster")
         }
         labelTitle.text = model.title
         labelSubTitle.text = model.subTitle
